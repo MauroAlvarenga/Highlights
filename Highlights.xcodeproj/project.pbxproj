@@ -18,6 +18,10 @@
 		E7A559A427F4C6BD00EB4B38 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A559A327F4C6BD00EB4B38 /* UIColor+Extension.swift */; };
 		E7A559A627F4C8FE00EB4B38 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7A559A527F4C8FE00EB4B38 /* Colors.xcassets */; };
 		E7A559A827F4D10400EB4B38 /* testImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7A559A727F4D10300EB4B38 /* testImages.xcassets */; };
+		E7A559AB27F4DA8F00EB4B38 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A559A927F4DA8F00EB4B38 /* FavoritesViewController.swift */; };
+		E7A559AC27F4DA8F00EB4B38 /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7A559AA27F4DA8F00EB4B38 /* FavoritesViewController.xib */; };
+		E7A559AF27F4DFFC00EB4B38 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A559AD27F4DFFC00EB4B38 /* TableViewCell.swift */; };
+		E7A559B027F4DFFC00EB4B38 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7A559AE27F4DFFC00EB4B38 /* TableViewCell.xib */; };
 		E7F8AB7027F4A6B200F0D65A /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F8AB6F27F4A6B200F0D65A /* TabBarViewController.swift */; };
 		E7F8AB7427F4A79100F0D65A /* SearchResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F8AB7227F4A79100F0D65A /* SearchResultCollectionViewCell.swift */; };
 		E7F8AB7527F4A79100F0D65A /* SearchResultCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7F8AB7327F4A79100F0D65A /* SearchResultCollectionViewCell.xib */; };
@@ -42,6 +46,10 @@
 		E7A559A327F4C6BD00EB4B38 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		E7A559A527F4C8FE00EB4B38 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		E7A559A727F4D10300EB4B38 /* testImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = testImages.xcassets; sourceTree = "<group>"; };
+		E7A559A927F4DA8F00EB4B38 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		E7A559AA27F4DA8F00EB4B38 /* FavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
+		E7A559AD27F4DFFC00EB4B38 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		E7A559AE27F4DFFC00EB4B38 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		E7F8AB6F27F4A6B200F0D65A /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		E7F8AB7227F4A79100F0D65A /* SearchResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCollectionViewCell.swift; sourceTree = "<group>"; };
 		E7F8AB7327F4A79100F0D65A /* SearchResultCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -132,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				E7474BFA27F38FC60011D73D /* HomeViewController.swift */,
+				E7A559A927F4DA8F00EB4B38 /* FavoritesViewController.swift */,
 				E7F8AB6F27F4A6B200F0D65A /* TabBarViewController.swift */,
 				E7474C0627F4878B0011D73D /* ProductViewController.swift */,
 			);
@@ -142,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				E7474BFB27F38FC60011D73D /* HomeViewController.xib */,
+				E7A559AA27F4DA8F00EB4B38 /* FavoritesViewController.xib */,
 				E7474C0727F4878B0011D73D /* ProductViewController.xib */,
 			);
 			path = Views;
@@ -152,6 +162,8 @@
 			children = (
 				E7F8AB7227F4A79100F0D65A /* SearchResultCollectionViewCell.swift */,
 				E7F8AB7327F4A79100F0D65A /* SearchResultCollectionViewCell.xib */,
+				E7A559AD27F4DFFC00EB4B38 /* TableViewCell.swift */,
+				E7A559AE27F4DFFC00EB4B38 /* TableViewCell.xib */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -240,12 +252,14 @@
 				E7A559A827F4D10400EB4B38 /* testImages.xcassets in Resources */,
 				E7474BF327F38E860011D73D /* LaunchScreen.storyboard in Resources */,
 				E7F8AB7E27F4B42A00F0D65A /* proximanova-regular.otf in Resources */,
+				E7A559B027F4DFFC00EB4B38 /* TableViewCell.xib in Resources */,
 				E7474BF027F38E860011D73D /* Assets.xcassets in Resources */,
 				E7474BFD27F38FC60011D73D /* HomeViewController.xib in Resources */,
 				E7F8AB7527F4A79100F0D65A /* SearchResultCollectionViewCell.xib in Resources */,
 				E7474C0927F4878B0011D73D /* ProductViewController.xib in Resources */,
 				E7F8AB7F27F4B42A00F0D65A /* proximanova-bold.otf in Resources */,
 				E7F8AB8127F4B42A00F0D65A /* proximanova-semibold.otf in Resources */,
+				E7A559AC27F4DA8F00EB4B38 /* FavoritesViewController.xib in Resources */,
 				E7F8AB8027F4B42A00F0D65A /* proximanova-medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,9 +272,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7474BE727F38E860011D73D /* AppDelegate.swift in Sources */,
+				E7A559AB27F4DA8F00EB4B38 /* FavoritesViewController.swift in Sources */,
 				E7F8AB7427F4A79100F0D65A /* SearchResultCollectionViewCell.swift in Sources */,
 				E7F8AB7727F4AFEA00F0D65A /* ViewController+Extension.swift in Sources */,
 				E7474BE927F38E860011D73D /* SceneDelegate.swift in Sources */,
+				E7A559AF27F4DFFC00EB4B38 /* TableViewCell.swift in Sources */,
 				E7474C0827F4878B0011D73D /* ProductViewController.swift in Sources */,
 				E7F8AB7027F4A6B200F0D65A /* TabBarViewController.swift in Sources */,
 				E7474BFC27F38FC60011D73D /* HomeViewController.swift in Sources */,

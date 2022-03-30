@@ -15,7 +15,6 @@ class HomeViewController: UIViewController {
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCollectionView()
         self.view.backgroundColor = .testColor
         // Do any additional setup after loading the view.
 
@@ -25,22 +24,3 @@ class HomeViewController: UIViewController {
     
 }
 
-// MARK: CollectionView extension
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    func setupCollectionView() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(UINib(nibName: "SearchResultCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: SearchResultCollectionViewCell.identifier)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        25
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(withReuseIdentifier: SearchResultCollectionViewCell.identifier, for: indexPath)
-    }
-    
-    
-}

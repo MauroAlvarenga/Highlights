@@ -3,44 +3,49 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="proximanova-semibold.otf">
-            <string>ProximaNova-Semibold</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductViewController" customModule="Highlights" customModuleProvider="target">
             <connections>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="collectionView" destination="FIH-yG-pij" id="euc-rc-dqL"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="6cZ-3h-sCS">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBO-9r-39w">
-                    <rect key="frame" x="171" y="433" width="73" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="30"/>
-                    <color key="textColor" name="accentML"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MlQ-WI-AAJ">
+                    <rect key="frame" x="20" y="94" width="374" height="718"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="FIH-yG-pij">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="718"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Pv0-cb-lbf">
+                                <size key="itemSize" width="350" height="200"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                </stackView>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <viewLayoutGuide key="safeArea" id="iZr-vs-34e"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="132" y="64"/>
+            <constraints>
+                <constraint firstItem="MlQ-WI-AAJ" firstAttribute="leading" secondItem="iZr-vs-34e" secondAttribute="leading" constant="20" id="5Z9-04-S7I"/>
+                <constraint firstItem="MlQ-WI-AAJ" firstAttribute="top" secondItem="iZr-vs-34e" secondAttribute="top" constant="50" id="MvG-9o-PPP"/>
+                <constraint firstItem="iZr-vs-34e" firstAttribute="trailing" secondItem="MlQ-WI-AAJ" secondAttribute="trailing" constant="20" id="X7x-WP-oCN"/>
+                <constraint firstItem="iZr-vs-34e" firstAttribute="bottom" secondItem="MlQ-WI-AAJ" secondAttribute="bottom" constant="50" id="c1F-KQ-Cgk"/>
+            </constraints>
+            <point key="canvasLocation" x="132" y="84"/>
         </view>
     </objects>
     <resources>
-        <namedColor name="accentML">
-            <color red="0.20392156862745098" green="0.51372549019607838" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -10,7 +10,10 @@ import UIKit
 class TableViewCell: UITableViewCell {
     
     // MARK: Properties
-    var hasTappedButton: Bool = false
+    private var hasTappedButton: Bool = false
+    private var ID: Int?
+    let userDefaults = UserDefaults()
+    var favoritesList = FavoritesList.shared
     
     // MARK: Outlets
     @IBOutlet weak var favoriteButton: UIButton!
@@ -26,12 +29,25 @@ class TableViewCell: UITableViewCell {
     
     // MARK: Actions
     @IBAction func didTapFavoriteButton(_ sender: UIButton) {
-        if hasTappedButton {
-            favoriteButton.setImage(UIImage(named: "FavoriteOutlined16"), for: .normal)
-            hasTappedButton = false
-        } else {
-            favoriteButton.setImage(UIImage(named: "FavoriteFilled16"), for: .normal)
+        if !hasTappedButton {
+            // Button was tapped
             hasTappedButton = true
+            favoriteButton.setImage(UIImage(named: "FavoriteFilled16"), for: .normal)
+            if let id = self.ID {
+                favoritesList.addFavorite(id)
+                print("Added something")
+                print(favoritesList.getFavorites())
+            }
+        } else {
+            // For the case when the button gets tapped again
+            hasTappedButton = false
+            favoriteButton.setImage(UIImage(named: "FavoriteOutlined16"), for: .normal)
+            userDefaults.removeObject(forKey: "favoriteItemID")
+            if let id = self.ID {
+                favoritesList.removeFavorite(id)
+                print("Removed something")
+                print(favoritesList.getFavorites())
+            }
         }
     }
     
@@ -41,5 +57,9 @@ class TableViewCell: UITableViewCell {
     
     func hideFavoriteButton() {
         self.favoriteButton.isHidden = true
+    }
+    
+    func setCellID(_ id: Int) {
+        self.ID = id
     }
 }

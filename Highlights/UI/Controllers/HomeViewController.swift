@@ -9,6 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    // MARK: Properties
     let photos = [
         UIImage(named: "car1"),
         UIImage(named: "car2"),
@@ -21,6 +22,7 @@ class HomeViewController: UIViewController {
         UIImage(named: "car4"),
         UIImage(named: "productViewCar")
     ].compactMap { $0 }
+    let userDefaults = UserDefaults()
     
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -45,6 +47,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as? TableViewCell {
             cell.setCellImage(photos[indexPath.row])
+            cell.setCellID(indexPath.row)
             return cell
         }
         return UITableViewCell()

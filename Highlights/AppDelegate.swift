@@ -31,6 +31,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
+    func applicationWillTerminate(_ application: UIApplication) {
+        // Save favorites to UserDefaults when app has terminated.
+        let favoritesList = FavoritesList.shared.getFavorites()
+        let defaults = UserDefaults.standard
+        defaults.set(favoritesList, forKey: "favoritesList")
+    }
 
 }
 

@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,43 +11,41 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Highlights" customModuleProvider="target">
             <connections>
-                <outlet property="collectionView" destination="qbv-pI-ZxC" id="9JG-ha-YXo"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="tableView" destination="Rh0-Um-TGQ" id="fKF-Rr-Ebc"/>
+                <outlet property="view" destination="Gzu-3d-MkM" id="pcq-ra-UVl"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Gzu-3d-MkM">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lyI-z1-vuq">
-                    <rect key="frame" x="20" y="94" width="374" height="718"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Rwc-3Z-kZV">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
-                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="qbv-pI-ZxC">
-                            <rect key="frame" x="0.0" y="0.0" width="374" height="718"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Wz3-Tw-U3m">
-                                <size key="itemSize" width="350" height="200"/>
-                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            </collectionViewFlowLayout>
-                        </collectionView>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Rh0-Um-TGQ">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                            <color key="backgroundColor" name="backgroundPrimary"/>
+                            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </tableView>
                     </subviews>
                 </stackView>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <viewLayoutGuide key="safeArea" id="C1i-o2-a2K"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="lyI-z1-vuq" secondAttribute="bottom" constant="50" id="A4m-Yc-Eg6"/>
-                <constraint firstItem="lyI-z1-vuq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="EU0-e9-2AW"/>
-                <constraint firstItem="lyI-z1-vuq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="Yl9-02-KRF"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lyI-z1-vuq" secondAttribute="trailing" constant="20" id="dEQ-HX-cwS"/>
+                <constraint firstItem="C1i-o2-a2K" firstAttribute="trailing" secondItem="Rwc-3Z-kZV" secondAttribute="trailing" id="Lv7-Fd-a4S"/>
+                <constraint firstItem="Rwc-3Z-kZV" firstAttribute="leading" secondItem="C1i-o2-a2K" secondAttribute="leading" id="YdU-kt-C3J"/>
+                <constraint firstItem="C1i-o2-a2K" firstAttribute="bottom" secondItem="Rwc-3Z-kZV" secondAttribute="bottom" id="auF-eI-fDs"/>
+                <constraint firstItem="Rwc-3Z-kZV" firstAttribute="top" secondItem="C1i-o2-a2K" secondAttribute="top" id="hur-Nt-Mjm"/>
             </constraints>
-            <point key="canvasLocation" x="132" y="84"/>
+            <point key="canvasLocation" x="-236" y="-560"/>
         </view>
     </objects>
     <resources>
+        <namedColor name="backgroundPrimary">
+            <color red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

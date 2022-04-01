@@ -42,7 +42,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 2.200.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGw-x1-6Tg" userLabel="ProductPrice">
-                        <rect key="frame" x="151" y="37" width="133.5" height="25"/>
+                        <rect key="frame" x="151" y="41" width="133.5" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="Cjx-A4-E69"/>
                         </constraints>
@@ -51,21 +51,21 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019 - 37.000 Km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1n-KG-5pt" userLabel="ProductDescription">
-                        <rect key="frame" x="151" y="64" width="107.5" height="18"/>
+                        <rect key="frame" x="151" y="70" width="107.5" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="mJU-jP-290"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
-                        <color key="textColor" name="textSecondary"/>
+                        <color key="textColor" name="grey4"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bs.As. G.B.A Norte" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ovm-ki-KZ6" userLabel="ProductLocation">
-                        <rect key="frame" x="151" y="84" width="114" height="18"/>
+                        <rect key="frame" x="151" y="92" width="114" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="lEc-4H-HCK"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
-                        <color key="textColor" name="textSecondary"/>
+                        <color key="textColor" name="grey4"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rVl-uw-Ise">
@@ -91,21 +91,21 @@
                     <constraint firstItem="xPG-Kr-cTv" firstAttribute="leading" secondItem="rVl-uw-Ise" secondAttribute="trailing" constant="16" id="0OE-vy-lcN"/>
                     <constraint firstItem="I1n-KG-5pt" firstAttribute="leading" secondItem="bHz-JU-s28" secondAttribute="trailing" constant="10" id="2A4-yF-VXd"/>
                     <constraint firstItem="Ovm-ki-KZ6" firstAttribute="leading" secondItem="bHz-JU-s28" secondAttribute="trailing" constant="10" id="Dkc-RE-fr5"/>
-                    <constraint firstItem="Ovm-ki-KZ6" firstAttribute="top" secondItem="I1n-KG-5pt" secondAttribute="bottom" constant="2" id="FvG-6Z-3tL"/>
+                    <constraint firstItem="Ovm-ki-KZ6" firstAttribute="top" secondItem="I1n-KG-5pt" secondAttribute="bottom" constant="4" id="FvG-6Z-3tL"/>
                     <constraint firstItem="xPG-Kr-cTv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="WjK-bd-lBU"/>
-                    <constraint firstItem="I1n-KG-5pt" firstAttribute="top" secondItem="gGw-x1-6Tg" secondAttribute="bottom" constant="2" id="YX8-eC-mK2"/>
+                    <constraint firstItem="I1n-KG-5pt" firstAttribute="top" secondItem="gGw-x1-6Tg" secondAttribute="bottom" constant="4" id="YX8-eC-mK2"/>
                     <constraint firstAttribute="bottom" secondItem="bHz-JU-s28" secondAttribute="bottom" constant="14" id="a7t-jS-EGP"/>
                     <constraint firstItem="gGw-x1-6Tg" firstAttribute="leading" secondItem="bHz-JU-s28" secondAttribute="trailing" constant="10" id="e9b-nb-MEx"/>
                     <constraint firstItem="xPG-Kr-cTv" firstAttribute="leading" secondItem="bHz-JU-s28" secondAttribute="trailing" constant="10" id="jtX-Ti-IJp"/>
                     <constraint firstItem="rVl-uw-Ise" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="nMH-Lm-miC"/>
                     <constraint firstItem="bHz-JU-s28" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="oqg-SF-Kan"/>
                     <constraint firstItem="bHz-JU-s28" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="pQV-Ux-477"/>
-                    <constraint firstItem="gGw-x1-6Tg" firstAttribute="top" secondItem="xPG-Kr-cTv" secondAttribute="bottom" constant="4" id="rJQ-f0-EYX"/>
-                    <constraint firstItem="Ovm-ki-KZ6" firstAttribute="top" secondItem="I1n-KG-5pt" secondAttribute="bottom" constant="2" id="xeQ-Hz-2p1"/>
+                    <constraint firstItem="gGw-x1-6Tg" firstAttribute="top" secondItem="xPG-Kr-cTv" secondAttribute="bottom" constant="8" id="rJQ-f0-EYX"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="cellImage" destination="bHz-JU-s28" id="kc3-kt-pLS"/>
                 <outlet property="favoriteButton" destination="rVl-uw-Ise" id="0SI-Wx-NMf"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="63.28125"/>
@@ -123,14 +123,14 @@
         <namedColor name="backgroundWhite">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="grey4">
+            <color red="0.59999999999999998" green="0.60784313725490191" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="textDark">
             <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="textPrimary">
             <color red="0.0" green="0.0" blue="0.0" alpha="0.89999997615814209" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="textSecondary">
-            <color red="0.0" green="0.0" blue="0.0" alpha="0.55000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

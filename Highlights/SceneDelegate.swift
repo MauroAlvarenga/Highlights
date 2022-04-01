@@ -14,18 +14,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let thisScene = (scene as? UIWindowScene) else { return }
-        let window = UIWindow(windowScene: thisScene)
-        
-        //let vc = UINavigationController(rootViewController: HomeViewController())
-        //let vc = UINavigationController(rootViewController: FavoritesViewController())
-        let vc = UINavigationController(rootViewController: ProductViewController())
-        window.rootViewController = vc
-        window.makeKeyAndVisible()
-        self.window = window
 //        let window = UIWindow(windowScene: thisScene)
-//        window.rootViewController = TabBarViewController()
+//        //let vc = UINavigationController(rootViewController: HomeViewController())
+//        //let vc = UINavigationController(rootViewController: FavoritesViewController())
+//        let vc = UINavigationController(rootViewController: ProductViewController())
+//        window.rootViewController = vc
 //        window.makeKeyAndVisible()
 //        self.window = window
+        let window = UIWindow(windowScene: thisScene)
+        window.rootViewController = TabBarViewController()
+        window.makeKeyAndVisible()
+        self.window = window
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

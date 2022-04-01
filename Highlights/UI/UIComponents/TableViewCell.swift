@@ -9,9 +9,12 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
     
+    // MARK: Properties
+    var hasTappedButton: Bool = false
+    
     // MARK: Outlets
     @IBOutlet weak var favoriteButton: UIButton!
-    var hasTappedButton: Bool = false
+    @IBOutlet weak var cellImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,15 +27,19 @@ class TableViewCell: UITableViewCell {
     // MARK: Actions
     @IBAction func didTapFavoriteButton(_ sender: UIButton) {
         if hasTappedButton {
-            favoriteButton.setImage(UIImage(named: "FavoriteFilled16"), for: .normal)
+            favoriteButton.setImage(UIImage(named: "FavoriteOutlined16"), for: .normal)
             hasTappedButton = false
         } else {
-            favoriteButton.setImage(UIImage(named: "FavoriteOutlined16"), for: .normal)
+            favoriteButton.setImage(UIImage(named: "FavoriteFilled16"), for: .normal)
             hasTappedButton = true
         }
     }
     
-    public func hideFavoriteButton() {
-        favoriteButton.isHidden = true
+    func setCellImage(_ img: UIImage) {
+        self.cellImage.image = img
+    }
+    
+    func hideFavoriteButton() {
+        self.favoriteButton.isHidden = true
     }
 }

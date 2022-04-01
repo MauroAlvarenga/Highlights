@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,45 +11,41 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavoritesViewController" customModule="Highlights" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="W5o-Ut-O3Y" id="Hxq-Wx-Ykc"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="tableView" destination="A2z-Nh-yez" id="4hB-ag-znR"/>
+                <outlet property="view" destination="E8O-XL-SCT" id="QfR-rR-wEU"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="E8O-XL-SCT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="K88-IS-8jH">
-                    <rect key="frame" x="-1" y="-1" width="414" height="896"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zeY-mb-3Vy">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KSJ-Ys-Cet">
-                            <rect key="frame" x="0.0" y="64" width="414" height="779"/>
-                            <subviews>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="W5o-Ut-O3Y">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="779"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                </tableView>
-                            </subviews>
-                        </stackView>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="A2z-Nh-yez">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                            <color key="backgroundColor" name="backgroundPrimary"/>
+                            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </tableView>
                     </subviews>
-                    <viewLayoutGuide key="safeArea" id="xyZ-yU-T6q"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <constraints>
-                        <constraint firstItem="KSJ-Ys-Cet" firstAttribute="top" secondItem="xyZ-yU-T6q" secondAttribute="top" constant="20" id="IXF-sf-MbU"/>
-                        <constraint firstItem="KSJ-Ys-Cet" firstAttribute="leading" secondItem="xyZ-yU-T6q" secondAttribute="leading" id="arc-zR-gEF"/>
-                        <constraint firstItem="xyZ-yU-T6q" firstAttribute="bottom" secondItem="KSJ-Ys-Cet" secondAttribute="bottom" constant="20" id="dXY-ha-yzf"/>
-                        <constraint firstItem="xyZ-yU-T6q" firstAttribute="trailing" secondItem="KSJ-Ys-Cet" secondAttribute="trailing" id="fmY-Ov-GYj"/>
-                    </constraints>
-                </view>
+                </stackView>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <viewLayoutGuide key="safeArea" id="1ao-a1-2bU"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="132" y="64"/>
+            <constraints>
+                <constraint firstItem="zeY-mb-3Vy" firstAttribute="leading" secondItem="1ao-a1-2bU" secondAttribute="leading" id="5W1-Ka-waf"/>
+                <constraint firstItem="1ao-a1-2bU" firstAttribute="trailing" secondItem="zeY-mb-3Vy" secondAttribute="trailing" id="McM-Sc-07g"/>
+                <constraint firstItem="zeY-mb-3Vy" firstAttribute="top" secondItem="1ao-a1-2bU" secondAttribute="top" id="QSo-Ro-lcc"/>
+                <constraint firstItem="1ao-a1-2bU" firstAttribute="bottom" secondItem="zeY-mb-3Vy" secondAttribute="bottom" id="Tc6-7c-a5j"/>
+            </constraints>
+            <point key="canvasLocation" x="-522" y="-581"/>
         </view>
     </objects>
     <resources>
+        <namedColor name="backgroundPrimary">
+            <color red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

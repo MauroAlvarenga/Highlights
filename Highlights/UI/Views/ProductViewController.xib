@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductViewController" customModule="Highlights" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="FIH-yG-pij" id="euc-rc-dqL"/>
+                <outlet property="view" destination="6cZ-3h-sCS" id="ppz-Zw-zYk"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

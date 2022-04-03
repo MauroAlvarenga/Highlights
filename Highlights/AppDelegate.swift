@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        setNavBarStyle()
         return true
     }
 
@@ -33,10 +34,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Save favorites to UserDefaults when app has terminated.
-        let favoritesList = FavoritesList.shared.getFavorites()
+        let favoritesList = Array(FavoritesList.shared.getFavorites())
         let defaults = UserDefaults.standard
         defaults.set(favoritesList, forKey: "favoritesList")
     }
+    
+    // Set Global navigation bar styles.
+    private func setNavBarStyle() {
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .yellowML
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.textPrimary, .font: UIFont(name: "Proxima Nova", size: 24)!]
+        appearance.setBackIndicatorImage(UIImage(named: "ArrowLeft24"), transitionMaskImage: UIImage(named: "ArrowLeft24"))
+        UINavigationBar.appearance().tintColor = .textPrimary
+        
+        // NavBar Shadow
+        UINavigationBar.appearance().layer.shadowColor = UIColor.lightGray.cgColor
+        UINavigationBar.appearance().layer.shadowOpacity = 0.7
+        UINavigationBar.appearance().layer.shadowOffset = CGSize(width: 0, height: 2)
+        UINavigationBar.appearance().layer.shadowRadius = 2
+        
+        // Unify styles
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        UINavigationBar.appearance().compactAppearance = appearance
 
+    }
 }
 

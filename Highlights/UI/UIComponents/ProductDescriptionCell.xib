@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="proximanova-regular.otf">
+            <string>ProximaNova-Regular</string>
+        </array>
+        <array key="proximanova-semibold.otf">
+            <string>ProximaNova-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductDescriptionCell" id="KGk-i7-Jjw" customClass="ProductDescriptionCell" customModule="Highlights" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="400"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="390" height="400"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descripción" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jo-9I-2si">
+                        <rect key="frame" x="20" y="25" width="95.5" height="18"/>
+                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aK7-qu-00v">
+                        <rect key="frame" x="16" y="68" width="349" height="307"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <mutableString key="text">GRAN OPORTUNIDAD
+
+Lepic - CONCESIONARIO OFICIAL RENAULT – CASA CENTRAL
+
+¡¡¡¡¡LEER CON ATENCION!!!!!
+PRECIO PUBLICADO NO INCLUYE GASTOS
+
+UNIDAD DISPONIBLE EN CONCESIONARIO PARA ENTREGA INMEDIATA
+STOCK FÍSICO (Nro de Chasis y Motor)
+
+---------------------------------------------------------------------------------
+(Precio publicado no incluye gastos)
+NUEVAS OPORTUNIDADES 2021
+(Deposito – Transferencia bancaria - Cheque Común)GRAN OPORTUNIDAD
+
+Lepic - CONCESIONARIO OFICIAL RENAULT – CASA CENTRAL
+
+¡¡¡¡¡LEER CON ATENCION!!!!!
+PRECIO PUBLICADO NO INCLUYE GASTOS
+
+UNIDAD DISPONIBLE EN CONCESIONARIO PARA ENTREGA INMEDIATA
+STOCK FÍSICO (Nro de Chasis y Motor)
+
+---------------------------------------------------------------------------------
+(Precio publicado no incluye gastos)
+NUEVAS OPORTUNIDADES 2021
+(Deposito – Transferencia bancaria - Cheque Común)GRAN OPORTUNIDAD
+
+Lepic - CONCESIONARIO OFICIAL RENAULT – CASA CENTRAL
+
+¡¡¡¡¡LEER CON ATENCION!!!!!
+PRECIO PUBLICADO NO INCLUYE GASTOS
+
+UNIDAD DISPONIBLE EN CONCESIONARIO PARA ENTREGA INMEDIATA
+STOCK FÍSICO (Nro de Chasis y Motor)
+
+---------------------------------------------------------------------------------
+(Precio publicado no incluye gastos)
+NUEVAS OPORTUNIDADES 2021
+(Deposito – Transferencia bancaria - Cheque Común)</mutableString>
+                        <color key="textColor" systemColor="labelColor"/>
+                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="12"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="aK7-qu-00v" secondAttribute="bottom" constant="25" id="R0h-MH-TY3"/>
+                    <constraint firstAttribute="trailing" secondItem="aK7-qu-00v" secondAttribute="trailing" constant="25" id="avC-2c-DK0"/>
+                    <constraint firstItem="aK7-qu-00v" firstAttribute="top" secondItem="5jo-9I-2si" secondAttribute="bottom" constant="25" id="bll-v9-Soz"/>
+                    <constraint firstItem="5jo-9I-2si" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="fR0-HW-wm4"/>
+                    <constraint firstItem="5jo-9I-2si" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="g1f-yY-EEg"/>
+                    <constraint firstItem="aK7-qu-00v" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="vkl-4o-ceV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="132" y="67"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

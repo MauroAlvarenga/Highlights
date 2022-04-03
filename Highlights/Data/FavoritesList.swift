@@ -10,27 +10,27 @@ import Foundation
 final class FavoritesList {
     
     static let shared = FavoritesList()
-    private var favorites: [Int]
+    private var favorites: Set<String>
     
     private init() {
         let userDefaults = UserDefaults.standard
-        if let savedFavorites = userDefaults.object(forKey: "favoritesList") as? [Int] {
-            favorites = savedFavorites
+        if let savedFavorites = userDefaults.object(forKey: "favoritesList") as? [String] {
+            favorites = Set(savedFavorites)
         } else {
-            favorites = [Int]()
+            favorites = []
         }
     }
 
-    func getFavorites() -> [Int] {
+    func getFavorites() -> Set<String> {
         return self.favorites
     }
     
-    func addFavorite(_ newFavorite: Int) {
-        favorites.append(newFavorite)
+    func addFavorite(_ newFavorite: String) {
+        favorites.insert(newFavorite)
     }
     
-    func removeFavorite(_ oldFavorite: Int) {
-        favorites.removeAll { $0 == oldFavorite }
+    func removeFavorite(_ oldFavorite: String) {
+        favorites.remove(oldFavorite)
     }
     
 }

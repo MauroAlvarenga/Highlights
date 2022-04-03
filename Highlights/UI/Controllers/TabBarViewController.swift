@@ -41,38 +41,31 @@ class TabBarViewController: UITabBarController {
         let favoritesTabBarItem = UITabBarItem(title: "Favoritos", image: UIImage(named: "FavoriteOutlined24"), selectedImage: nil)
         favoritesNavigationController.tabBarItem = favoritesTabBarItem
         
-        // Add controllers to TabBar
-        viewControllers = [homeNavigationController, favoritesNavigationController]
+        // Test product detail view. TODO: remove in production
+        let productVC = ProductDetailViewController()
+        productVC.title = "Producto"
+        let pVCrightItem1 = barButtonFromImage("CartEmpty24")
+        let pVCrightItem2 = barButtonFromImage("Search24")
+        let rightItem3 = barButtonFromImage("FavoriteOutlined24")
+        productVC.navigationItem.rightBarButtonItems = [pVCrightItem1, pVCrightItem2, rightItem3]
+        let productNavigationController = UINavigationController(rootViewController: productVC)
+        let productTabBarItem = UITabBarItem(title: "Producto", image: UIImage(named: "CartEmpty24"), selectedImage: nil)
+        productNavigationController.tabBarItem = productTabBarItem
         
-        // Setup Navigation, Tab Bar and Search appeareance
-        setNavBarAppeareance(homeNavigationController.navigationBar)
-        setNavBarAppeareance(favoritesNavigationController.navigationBar)
+        // Add controllers to TabBar
+        viewControllers = [homeNavigationController, favoritesNavigationController, productNavigationController]
+        
+        // Setup Tab Bar and Search appeareance
         setTabBarAppeareance(self.tabBar)
         setSearchControllerAppeareance(searchController)
     }
 
 }
 
+// MARK: Appeareance Methods
 extension TabBarViewController {
     
-    func setNavBarAppeareance(_ navbar: UINavigationBar) {
-        let appearance = UINavigationBarAppearance()
-        //appearance.configureWithDefaultBackground()
-        appearance.backgroundColor = .yellowML
-        appearance.titleTextAttributes = [.foregroundColor: UIColor.textPrimary, .font: UIFont(name: "Proxima Nova", size: 24)!]
-        navbar.tintColor = .textPrimary
-        navbar.standardAppearance = appearance
-        navbar.scrollEdgeAppearance = appearance
-        navbar.compactAppearance = appearance
-        // NavBar Shadow
-        navbar.layer.shadowColor = UIColor.lightGray.cgColor
-        navbar.layer.shadowOpacity = 0.7
-        navbar.layer.shadowOffset = CGSize(width: 0, height: 2)
-        navbar.layer.shadowRadius = 2
-        
-    }
-    
-    func setTabBarAppeareance(_ tabBar: UITabBar) {
+    public func setTabBarAppeareance(_ tabBar: UITabBar) {
         let appearance = UITabBarAppearance()
         //appearance.configureWithDefaultBackground()
         appearance.backgroundColor = .backgroundWhite
@@ -98,4 +91,9 @@ extension TabBarViewController {
         searchController.searchBar.searchTextField.placeholder = "Buscar en Mercado Libre"
         searchController.searchBar.setValue("Cancelar", forKey: "cancelButtonText")
     }
+    
+    private func barButtonFromImage (_ name: String) -> UIBarButtonItem {
+        return UIBarButtonItem(image: UIImage(named: name), style: .plain, target: .none, action: .none)
+    }
+    
 }

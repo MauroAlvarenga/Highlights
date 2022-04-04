@@ -66,8 +66,8 @@ extension ProductDetailViewController: UITableViewDelegate, UITableViewDataSourc
         tableView.dataSource = self
         tableView.register(UINib(nibName: "ProductDetailCell", bundle: nil), forCellReuseIdentifier: "ProductDetailCell")
         tableView.register(UINib(nibName: "ProductDescriptionCell", bundle: nil), forCellReuseIdentifier: "ProductDescriptionCell")
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 600
+//        tableView.rowHeight = UITableView.automaticDimension
+//        tableView.estimatedRowHeight = 600
     }
     
 }

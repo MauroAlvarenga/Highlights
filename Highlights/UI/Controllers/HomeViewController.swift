@@ -26,6 +26,17 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        let tryToken = TokenService()
+        tryToken.getToken { token in
+            print(token)
+            if token == "Error validating grant. Your authorization code or refresh token may be expired or it was already used" {
+                print("Entre al refresh token")
+                tryToken.getRefreshToken { refreshToken, another in
+                    print("wtf")
+                    print("Had to get a refresh token: \(refreshToken), \(another)")
+                }
+            }
+        }
     }
 
     // MARK: Methods

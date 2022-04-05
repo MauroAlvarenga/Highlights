@@ -10,11 +10,11 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         setNavBarStyle()
+        checkForToken()
         return true
     }
 
@@ -59,5 +59,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().compactAppearance = appearance
 
     }
+    
+    // Check for a saved token or ask for a new one if it doesn´t work anymore.
+    private func checkForToken() {
+        let defaults = UserDefaults.standard
+        if let token = defaults.object(forKey: "accessToken") as? String {
+            print("Habemus Token! \(token)")
+            // If there's a token, test it's working (not expired)
+            let tokenService = TokenService()
+            tokenService.testToken(token) { isWorking in
+                if !isWorking {
+                    print("TOKEN NOT WORKING ALERT")
+                    self.getToken()
+                }
+            }
+        } else {
+            self.getToken()
+        }
+    }
+    
+    // Used to generate a new token in case the actual one is expired
+    private func getToken() {
+        let usedTokenError = "Error validating grant. Your authorization code or refresh token may be expired or it was already used"
+        let apiToken = TokenService()
+        apiToken.getToken { token in
+            print("Got a first time token: \(token)")
+            if token == usedTokenError {
+                apiToken.getRefreshToken { refreshedToken in
+                    print("Had to get a refresh token: \(refreshedToken)")
+                }
+            }
+        }
+    }
+    
+    
+    //...
 }
 

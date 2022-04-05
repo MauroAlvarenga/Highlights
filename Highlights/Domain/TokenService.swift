@@ -31,8 +31,7 @@ class TokenService {
         "Content-Type":"application/x-www-form-urlencoded"
     ]
     
-    // Lazy var to be able to use appTG.
-    
+    // Lazy vars to be able to use stored properties.
     private lazy var parameters: Parameters = {
         return [
             "grant_type": "authorization_code",
@@ -50,29 +49,24 @@ class TokenService {
     }()
     
     private lazy var refreshParameters: Parameters = {
-//        if let refreshToken = refreshToken {
         return [
             "grant_type": "refresh_token",
             "client_id": "6883177076370857",
             "client_secret": "MZesx4z0qmpFh1yQpNr5nmpan4xOwTXI",
             "refresh_token": self.refreshToken,
         ]
-//        }
-//        return [String:Any]()
     }()
     
     private let apiClient = AlamofireAPIClient()
     
     // MARK: Methods
     func getToken(completion: @escaping (String) -> Void) {
-        // TODO: Refresh token.
         apiClient.post(url: self.url, parameters: self.parameters, headers: self.headers) { response in
             switch response {
             case .success(let data):
                 do {
-                    if let dataOK = data {
-                        print(dataOK)
-                        let receivedToken = try JSONDecoder().decode(Token.self, from: dataOK)
+                    if let jsonData = data {
+                        let receivedToken = try JSONDecoder().decode(Token.self, from: jsonData)
                         if let message = receivedToken.message {
                             completion(message)
                         }
@@ -84,7 +78,7 @@ class TokenService {
                     }
                 } catch {
                     print(error)
-                    completion("Error getting token")
+                    completion("Error decoding token")
                 }
             case .failure(let error):
                 print(error)
@@ -93,39 +87,73 @@ class TokenService {
         }
     }
     
-    func getRefreshToken(completion: @escaping (String, String) -> Void) {
-//        if self.refreshToken != nil {
+    // Get another token using refresh token
+    func getRefreshToken(completion: @escaping (String) -> Void) {
             apiClient.post(url: self.url, parameters: self.refreshParameters, headers: self.headers) { response in
                 switch response {
                 case .success(let data):
                     do {
-                        if let dataOK = data {
-                            print(dataOK)
-                            let receivedToken = try JSONDecoder().decode(Token.self, from: dataOK)
-                            if let message = receivedToken.message, let refreshT = receivedToken.refresh_token {
-                                completion(message, refreshT)
+                        if let jsonData = data {
+                            let receivedToken = try JSONDecoder().decode(Token.self, from: jsonData)
+                            if let message = receivedToken.message {
+                                completion(message)
                             }
                             if let accessToken = receivedToken.access_token, let refreshT = receivedToken.refresh_token {
                                 self.saveTokens(accessToken, refreshT)
                                 self.refreshToken = refreshT
-                                completion(accessToken, refreshT)
+                                completion(accessToken)
                             }
                         }
                     } catch {
                         print(error)
-                        completion("Error getting token", "asdasd")
+                        completion("Error decoding refresh token")
                         }
                 case .failure(let error):
                     print(error)
-                    completion("Error getting token.","asdasd")
+                    completion("Error getting refresh token.")
                     }
             }
-//        }
     }
     
+    // Save tokens to User Defaults
     private func saveTokens(_ accessToken: String,_ refreshToken: String) {
         let defaults = UserDefaults.standard
         defaults.set(accessToken, forKey: "accessToken")
         defaults.set(refreshToken, forKey: "refreshToken")
     }
+    
+}
+
+// MARK: Public
+extension TokenService {
+    
+    public func testToken(_ token: String, completion: @escaping (Bool) -> Void) {
+        let authHeader = HTTPHeader(name: "Authorization", value: "Bearer \(token)")
+        let headers = HTTPHeaders([authHeader])
+        
+        let url = "https://api.mercadolibre.com/highlights/MLA/category/MLA428934"
+        apiClient.get(url: url, headers: headers) { response in
+            switch response {
+            case .success(let data):
+                do {
+                    if let jsonData = data {
+                        let receivedData = try JSONDecoder().decode(TopTwenty.self, from: jsonData)
+                        if receivedData.message == "invalid_token" {
+                            completion(false)
+                        } else {
+                            print(receivedData)
+                            completion(true)
+                        }
+                    }
+                } catch {
+                    print("Error decoding test Categories")
+                    print(error)
+                }
+            case .failure(let error):
+                print("Error getting test Categories")
+                print(error)
+            }
+        }
+    }
+    
 }

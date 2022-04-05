@@ -25,6 +25,9 @@
 		E748D68E27FBB51200A46AC8 /* Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748D68D27FBB51200A46AC8 /* Attributes.swift */; };
 		E748D69027FBF46100A46AC8 /* TopTwenty.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748D68F27FBF46100A46AC8 /* TopTwenty.swift */; };
 		E748D69227FBF4B400A46AC8 /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748D69127FBF4B400A46AC8 /* ProductDetail.swift */; };
+		E748D69427FC01C100A46AC8 /* CategoriesPredictorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748D69327FC01C100A46AC8 /* CategoriesPredictorService.swift */; };
+		E748D69727FC18D000A46AC8 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748D69627FC18D000A46AC8 /* SearchViewModel.swift */; };
+		E748D69927FC22B500A46AC8 /* TopTwentyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748D69827FC22B500A46AC8 /* TopTwentyService.swift */; };
 		E75239D127F8FC61008E6311 /* ProductDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75239CF27F8FC61008E6311 /* ProductDescriptionCell.swift */; };
 		E75239D227F8FC61008E6311 /* ProductDescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E75239D027F8FC61008E6311 /* ProductDescriptionCell.xib */; };
 		E7670B9327F784A2008A2781 /* FavoritesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7670B9227F784A2008A2781 /* FavoritesList.swift */; };
@@ -66,6 +69,9 @@
 		E748D68D27FBB51200A46AC8 /* Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attributes.swift; sourceTree = "<group>"; };
 		E748D68F27FBF46100A46AC8 /* TopTwenty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTwenty.swift; sourceTree = "<group>"; };
 		E748D69127FBF4B400A46AC8 /* ProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
+		E748D69327FC01C100A46AC8 /* CategoriesPredictorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesPredictorService.swift; sourceTree = "<group>"; };
+		E748D69627FC18D000A46AC8 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		E748D69827FC22B500A46AC8 /* TopTwentyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTwentyService.swift; sourceTree = "<group>"; };
 		E75239CF27F8FC61008E6311 /* ProductDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDescriptionCell.swift; sourceTree = "<group>"; };
 		E75239D027F8FC61008E6311 /* ProductDescriptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDescriptionCell.xib; sourceTree = "<group>"; };
 		E7670B9227F784A2008A2781 /* FavoritesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesList.swift; sourceTree = "<group>"; };
@@ -125,6 +131,7 @@
 		E7474BE527F38E860011D73D /* Highlights */ = {
 			isa = PBXGroup;
 			children = (
+				E748D69527FC18AB00A46AC8 /* ViewModel */,
 				E7474C0227F487090011D73D /* UI */,
 				E7474C0327F487140011D73D /* Domain */,
 				E7474C0427F4871D0011D73D /* Data */,
@@ -153,6 +160,8 @@
 			children = (
 				E748D68527FB364300A46AC8 /* AlamofireAPIClient.swift */,
 				E748D68727FB44CB00A46AC8 /* TokenService.swift */,
+				E748D69327FC01C100A46AC8 /* CategoriesPredictorService.swift */,
+				E748D69827FC22B500A46AC8 /* TopTwentyService.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -198,6 +207,14 @@
 				E70F429827F88E8C0055AFF9 /* ProductDetailViewController.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E748D69527FC18AB00A46AC8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E748D69627FC18D000A46AC8 /* SearchViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		E7F8AB7127F4A76300F0D65A /* UIComponents */ = {
@@ -372,18 +389,21 @@
 			files = (
 				E748D69227FBF4B400A46AC8 /* ProductDetail.swift in Sources */,
 				E748D68627FB364300A46AC8 /* AlamofireAPIClient.swift in Sources */,
+				E748D69927FC22B500A46AC8 /* TopTwentyService.swift in Sources */,
 				E748D68E27FBB51200A46AC8 /* Attributes.swift in Sources */,
 				E7474BE727F38E860011D73D /* AppDelegate.swift in Sources */,
 				E7A559AB27F4DA8F00EB4B38 /* FavoritesViewController.swift in Sources */,
 				E748D68827FB44CB00A46AC8 /* TokenService.swift in Sources */,
 				E7F8AB7727F4AFEA00F0D65A /* ViewController+Extension.swift in Sources */,
 				E748D69027FBF46100A46AC8 /* TopTwenty.swift in Sources */,
+				E748D69427FC01C100A46AC8 /* CategoriesPredictorService.swift in Sources */,
 				E7474BE927F38E860011D73D /* SceneDelegate.swift in Sources */,
 				E748D68C27FBB23600A46AC8 /* PredictorCategories.swift in Sources */,
 				E70F429927F88E8C0055AFF9 /* ProductDetailViewController.swift in Sources */,
 				E7A559AF27F4DFFC00EB4B38 /* TableViewCell.swift in Sources */,
 				E7F8AB7027F4A6B200F0D65A /* TabBarViewController.swift in Sources */,
 				E7474BFC27F38FC60011D73D /* HomeViewController.swift in Sources */,
+				E748D69727FC18D000A46AC8 /* SearchViewModel.swift in Sources */,
 				E70F429E27F8E7430055AFF9 /* ProductDetailCell.swift in Sources */,
 				E7A559A427F4C6BD00EB4B38 /* UIColor+Extension.swift in Sources */,
 				E748D68A27FB6DE200A46AC8 /* MeliPrint.swift in Sources */,

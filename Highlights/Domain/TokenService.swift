@@ -141,7 +141,7 @@ extension TokenService {
                         if receivedData.message == "invalid_token" {
                             completion(false)
                         } else {
-                            print(receivedData)
+                            //print(receivedData) // Used for testing purposes
                             completion(true)
                         }
                     }

@@ -10,6 +10,8 @@ import UIKit
 class HomeViewController: UIViewController {
 
     // MARK: Properties
+    let searchVM = SearchViewModel(service: CategoriesPredictionService())
+    
     typealias Product = (id: String, img: UIImage)
     let products: [Product] = [
         (id: "car1", img: UIImage(named: "car1")!),
@@ -26,6 +28,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        setupSearchBar()
     }
 
     // MARK: Methods
@@ -43,7 +46,7 @@ class HomeViewController: UIViewController {
     }
 }
 
-
+// MARK: Table View delegate and data source.
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -68,17 +71,52 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
+    // Configure table view delegate, data source, and cell.
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
     }
-    
-    func setNavBarAppeareance2(_ navbar: UINavigationBar) {
-        
-    }
-    
+
     private func barButtonFromImage (_ name: String) -> UIBarButtonItem {
         return UIBarButtonItem(image: UIImage(named: name), style: .plain, target: .none, action: .none)
     }
+}
+
+// MARK: Search Bar Delegate
+extension HomeViewController: UISearchBarDelegate {
+    
+    func setupSearchBar() {
+        let searchBar = UISearchBar()
+        setSearchBarStyle(searchBar)
+        // Add Search Bar to the navBar
+        self.navigationItem.titleView = searchBar
+        searchBar.delegate = self
+    }
+    
+    func setSearchBarStyle(_ searchBar: UISearchBar) {
+        searchBar.tintColor = .textPrimary
+        searchBar.searchTextField.layer.cornerRadius = 20
+        searchBar.searchTextField.layer.masksToBounds = true
+        searchBar.searchTextField.backgroundColor = .backgroundWhite
+        searchBar.searchTextField.placeholder = "Buscar en Mercado Libre 🇦🇷"
+        searchBar.setValue("Cancelar", forKey: "cancelButtonText")
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        print("holiholi")
+        // TODO: Show possible categories
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("A BUSCARLA!")
+        guard let text = searchBar.searchTextField.text else { return }
+        let keyword = text.trimmingCharacters(in: .whitespaces).replacingOccurrences(of: " ", with: "%20")
+        print(keyword)
+        searchVM.getTopCategory(search: keyword) { category in
+            print(category)
+        }
+    }
+    
+    
 }

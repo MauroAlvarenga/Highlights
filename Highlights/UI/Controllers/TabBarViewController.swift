@@ -17,13 +17,8 @@ class TabBarViewController: UITabBarController {
     
     func setupViewControllers() {
              
-        // Prepare the search Controller for the first controller
-        let searchController = UISearchController()
-        
         // Set the first tab Controller
         let homeVC = HomeViewController.instance()
-        // Add Search Bar to the first view
-        homeVC.navigationItem.titleView = searchController.searchBar
         // Set right bar Item
         homeVC.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "CartEmpty24"), style: .plain, target: .none, action: .none)
         let homeNavigationController = UINavigationController(rootViewController: homeVC)
@@ -57,7 +52,6 @@ class TabBarViewController: UITabBarController {
         
         // Setup Tab Bar and Search appeareance
         setTabBarAppeareance(self.tabBar)
-        setSearchControllerAppeareance(searchController)
     }
 
 }
@@ -81,15 +75,6 @@ extension TabBarViewController {
         tabBar.standardAppearance = appearance
         tabBar.scrollEdgeAppearance = tabBar.standardAppearance
         tabBar.tintColor = .accentML
-    }
-    
-    func setSearchControllerAppeareance(_ searchController: UISearchController) {
-        searchController.searchBar.tintColor = .textPrimary
-        searchController.searchBar.searchTextField.layer.cornerRadius = 20
-        searchController.searchBar.searchTextField.layer.masksToBounds = true
-        searchController.searchBar.searchTextField.backgroundColor = .backgroundWhite
-        searchController.searchBar.searchTextField.placeholder = "Buscar en Mercado Libre"
-        searchController.searchBar.setValue("Cancelar", forKey: "cancelButtonText")
     }
     
     private func barButtonFromImage (_ name: String) -> UIBarButtonItem {

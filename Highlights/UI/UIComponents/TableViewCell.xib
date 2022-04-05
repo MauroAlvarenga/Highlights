@@ -105,8 +105,12 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="TitleLabel" destination="xPG-Kr-cTv" id="rE5-KS-Jg3"/>
+                <outlet property="anotherLabel" destination="Ovm-ki-KZ6" id="FNE-vE-hMI"/>
                 <outlet property="cellImage" destination="bHz-JU-s28" id="kc3-kt-pLS"/>
                 <outlet property="favoriteButton" destination="rVl-uw-Ise" id="0SI-Wx-NMf"/>
+                <outlet property="priceLabel" destination="gGw-x1-6Tg" id="xuF-jW-qRE"/>
+                <outlet property="subtitleLabel" destination="I1n-KG-5pt" id="OzJ-wV-PPf"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="63.28125"/>
         </tableViewCell>

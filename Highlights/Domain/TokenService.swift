@@ -22,7 +22,7 @@ class TokenService {
     }
     
     // MARK: APP TG
-    private let appTG = "TG-624b545692fb51001b3d79ba-162557220"
+    private let appTG = "TG-624c3f6f10a237001cfff77c-162557220"
     
     private let url = "https://api.mercadolibre.com/oauth/token"
     
@@ -137,7 +137,7 @@ extension TokenService {
             case .success(let data):
                 do {
                     if let jsonData = data {
-                        let receivedData = try JSONDecoder().decode(TopTwenty.self, from: jsonData)
+                        let receivedData = try JSONDecoder().decode(Highlights.self, from: jsonData)
                         if receivedData.message == "invalid_token" {
                             completion(false)
                         } else {

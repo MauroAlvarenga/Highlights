@@ -10,13 +10,13 @@ import UIKit
 class FavoritesViewController: UIViewController {
 
     // MARK: Properties
-    let productImg: Dictionary<String, UIImage> = [
-        "car1": UIImage(named: "car1")!,
-        "car2": UIImage(named: "car2")!,
-        "car3": UIImage(named: "car3")!,
-        "car4": UIImage(named: "car4")!,
-        "productViewCar": UIImage(named: "productViewCar")!,
-    ]
+//    let productImg: Dictionary<String, UIImage> = [
+//        "car1": UIImage(named: "car1")!,
+//        "car2": UIImage(named: "car2")!,
+//        "car3": UIImage(named: "car3")!,
+//        "car4": UIImage(named: "car4")!,
+//        "productViewCar": UIImage(named: "productViewCar")!,
+//    ]
     var favoritesList = Array(FavoritesList.shared.getFavorites())
 
     
@@ -55,7 +55,7 @@ extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
             cell.hideFavoriteButton()
             let id = favoritesList[indexPath.row]
             cell.setCellID(id)
-            cell.setCellImage(productImg[id]!)
+            //cell.setCellImage(productImg[id]!)
             return cell
         }
         return UITableViewCell()

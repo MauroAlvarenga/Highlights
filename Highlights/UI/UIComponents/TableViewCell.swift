@@ -13,10 +13,15 @@ class TableViewCell: UITableViewCell {
     private var hasTappedButton: Bool = false
     private var ID: String?
     var favoritesList = FavoritesList.shared
+    let searchVM = SearchViewModel(categoriesService: CategoriesPredictionService(), highlightsService: HighlightsService(), productsService: HighlightedProductsService())
     
     // MARK: Outlets
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var cellImage: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var anotherLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -45,8 +50,13 @@ class TableViewCell: UITableViewCell {
 // MARK: Public
 extension TableViewCell {
     
-    public func configure() {
+    public func configure(product: Product) {
         // TODO: Receive info from service
+        self.titleLabel.text = product.title ?? "error config"
+        self.subtitleLabel.text = product.subtitle ?? ""
+        self.priceLabel.text = "$ " + String(Int(product.price ?? 0))
+        self.anotherLabel.text = product.id ?? "error config"
+        self.cellImage.loadFrom(URLAddress: product.pictures[0].url ?? "https://media.istockphoto.com/vectors/thumbnail-image-vector-graphic-vector-id1147544807?k=20&m=1147544807&s=612x612&w=0&h=pBhz1dkwsCMq37Udtp9sfxbjaMl27JUapoyYpQm0anc=")
     }
     
     public func setCellImage(_ img: UIImage) {
@@ -66,6 +76,7 @@ extension TableViewCell {
     
     public func setCellID(_ id: String) {
         self.ID = id
+        self.anotherLabel.text = id
     }
     
     public func getCellID() -> String {

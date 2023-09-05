@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="proximanova-medium.otf">
+            <string>ProximaNova-Medium</string>
+        </array>
+        <array key="proximanova-regular.otf">
+            <string>ProximaNova-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" id="KGk-i7-Jjw" customClass="TableViewCell" customModule="Highlights" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="374" height="159"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="374" height="159"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car1" translatesAutoresizingMaskIntoConstraints="NO" id="bHz-JU-s28">
+                        <rect key="frame" x="10" y="14" width="131" height="131"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="131" id="Euv-O2-uUh"/>
+                            <constraint firstAttribute="height" constant="131" id="RJq-cP-Eb0"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volkswagen Fox 1.6 Connect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPG-Kr-cTv" userLabel="ProductName">
+                        <rect key="frame" x="151" y="15" width="200.5" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="C37-xS-hEU"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
+                        <color key="textColor" name="textDark"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 2.200.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGw-x1-6Tg" userLabel="ProductPrice">
+                        <rect key="frame" x="151" y="41" width="133.5" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="Cjx-A4-E69"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="24"/>
+                        <color key="textColor" name="textPrimary"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019 - 37.000 Km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1n-KG-5pt" userLabel="ProductDescription">
+                        <rect key="frame" x="151" y="70" width="107.5" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="mJU-jP-290"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
+                        <color key="textColor" name="grey4"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bs.As. G.B.A Norte" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ovm-ki-KZ6" userLabel="ProductLocation">
+                        <rect key="frame" x="151" y="92" width="114" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="lEc-4H-HCK"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
+                        <color key="textColor" name="grey4"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rVl-uw-Ise">
+                        <rect key="frame" x="105" y="20" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="Dk9-m2-gnn"/>
+                            <constraint firstAttribute="width" constant="30" id="ylW-ol-BIa"/>
+                        </constraints>
+                        <color key="tintColor" name="accentML"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="filled" image="FavoriteOutlined16" cornerStyle="capsule">
+                            <backgroundConfiguration key="background"/>
+                            <color key="baseForegroundColor" name="accentML"/>
+                            <color key="baseBackgroundColor" name="backgroundSecondary"/>
+                        </buttonConfiguration>
+                        <connections>
+                            <action selector="didTapFavoriteButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="S6X-Ta-amS"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" name="backgroundWhite"/>
+                <constraints>
+                    <constraint firstItem="xPG-Kr-cTv" firstAttribute="leading" secondItem="rVl-uw-Ise" secondAttribute="trailing" constant="16" id="0OE-vy-lcN"/>
+                    <constraint firstItem="I1n-KG-5pt" firstAttribute="leading" secondItem="bHz-JU-s28" secondAttribute="trailing" constant="10" id="2A4-yF-VXd"/>
+                    <constraint firstItem="Ovm-ki-KZ6" firstAttribute="leading" secondItem="bHz-JU-s28" secondAttribute="trailing" constant="10" id="Dkc-RE-fr5"/>
+                    <constraint firstItem="Ovm-ki-KZ6" firstAttribute="top" secondItem="I1n-KG-5pt" secondAttribute="bottom" constant="4" id="FvG-6Z-3tL"/>
+                    <constraint firstItem="xPG-Kr-cTv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="WjK-bd-lBU"/>
+                    <constraint firstItem="I1n-KG-5pt" firstAttribute="top" secondItem="gGw-x1-6Tg" secondAttribute="bottom" constant="4" id="YX8-eC-mK2"/>
+                    <constraint firstAttribute="bottom" secondItem="bHz-JU-s28" secondAttribute="bottom" constant="14" id="a7t-jS-EGP"/>
+                    <constraint firstItem="gGw-x1-6Tg" firstAttribute="leading" secondItem="bHz-JU-s28" secondAttribute="trailing" constant="10" id="e9b-nb-MEx"/>
+                    <constraint firstItem="xPG-Kr-cTv" firstAttribute="leading" secondItem="bHz-JU-s28" secondAttribute="trailing" constant="10" id="jtX-Ti-IJp"/>
+                    <constraint firstItem="rVl-uw-Ise" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="nMH-Lm-miC"/>
+                    <constraint firstItem="bHz-JU-s28" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="oqg-SF-Kan"/>
+                    <constraint firstItem="bHz-JU-s28" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="pQV-Ux-477"/>
+                    <constraint firstItem="gGw-x1-6Tg" firstAttribute="top" secondItem="xPG-Kr-cTv" secondAttribute="bottom" constant="8" id="rJQ-f0-EYX"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="TitleLabel" destination="xPG-Kr-cTv" id="rE5-KS-Jg3"/>
+                <outlet property="anotherLabel" destination="Ovm-ki-KZ6" id="FNE-vE-hMI"/>
+                <outlet property="cellImage" destination="bHz-JU-s28" id="kc3-kt-pLS"/>
+                <outlet property="favoriteButton" destination="rVl-uw-Ise" id="0SI-Wx-NMf"/>
+                <outlet property="priceLabel" destination="gGw-x1-6Tg" id="xuF-jW-qRE"/>
+                <outlet property="subtitleLabel" destination="I1n-KG-5pt" id="OzJ-wV-PPf"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="63.28125"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="FavoriteOutlined16" width="16" height="16"/>
+        <image name="car1" width="131" height="131"/>
+        <namedColor name="accentML">
+            <color red="0.20392156862745098" green="0.51372549019607838" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="backgroundSecondary">
+            <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="backgroundWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grey4">
+            <color red="0.59999999999999998" green="0.60784313725490191" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textDark">
+            <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textPrimary">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.89999997615814209" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
